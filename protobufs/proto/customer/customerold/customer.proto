@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package customer.old;
+
+option go_package = "customer/old;customerold";
+
+message Customer {
+  string customer_id = 1;
+  string name = 2;
+}

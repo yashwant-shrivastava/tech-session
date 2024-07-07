@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package customer.new;
+
+option go_package = "customer/new;customernew";
+
+message Customer {
+    string customer_id = 1;
+    string name = 2;
+    string email = 3;
+}
+
+
+
+
+
+
+
+
