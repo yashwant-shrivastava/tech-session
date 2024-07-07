@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package grpc.customer_rpc;
+
+option go_package = "grpc/customer_rpc";
+
+service CustomerAPI {
+  rpc GetCustomerById(GetCustomerByIdRequest) returns (GetCustomerByIdResponse);
+  rpc GetCustomerByIds(stream GetCustomerByIdRequest) returns (GetCustomerByIdsResponse);
+  rpc GetCustomerInterests(GetCustomerInterestsRequest) returns (stream GetCustomerInterestsResponse);
+  rpc GetCustomerInterestsByIds(stream GetCustomerByIdRequest) returns (stream GetCustomerInterestsResponse);
+}
+
+message GetCustomerByIdRequest {
+  string id = 1;
+}
+
+message GetCustomerByIdResponse {
+  bool status = 1;
+  string id = 2;
+}
+
+message GetCustomerByIdsResponse {
+  bool status = 1;
+  repeated string ids = 2;
+}
+
+
+message GetCustomerInterestsRequest {
+  string id = 1;
+}
+
+message GetCustomerInterestsResponse {
+  string interest = 1;
+}
