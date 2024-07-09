@@ -20,7 +20,11 @@ func Test_IsProtoBufSame(t *testing.T) {
 		Name:       "Yashwant",
 	}
 
-	assert.Equal(t, c1, c2)
+	//assert.Equal(t, c1, c2)
+
+	marshalledProtoC1, _ := proto.Marshal(c1)
+	marshalledProtoC2, _ := proto.Marshal(c2)
+	assert.Equal(t, marshalledProtoC1, marshalledProtoC2)
 }
 
 func Test_BackwardCompatibility(t *testing.T) {
