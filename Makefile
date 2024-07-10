@@ -13,17 +13,3 @@ compile_protos:
 	--go-grpc_out=$(PROTO_GEN_DIR) \
 	--go-grpc_opt=paths=source_relative {} \;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
